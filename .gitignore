@@ -1,9 +1,13 @@
 # Data files - DON'T COMMIT LARGE FILES
-data/*.csv
-data/processed/*.csv
+data/
+!data/DATA_INFO.txt
+!data/dashboard/
 data/dashboard/*.csv
-*.json
-*.pkl
+data/dashboard/*.json
+data/processed/
+
+# Models
+models/*.pkl
 
 # Jupyter Notebook
 .ipynb_checkpoints/
