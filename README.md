@@ -53,21 +53,21 @@ The system is built on a modular "Lakehouse" architecture, validating data integ
 
 ```mermaid
 graph LR
-    subgraph Data Pipeline
-        Raw[Raw Data (CSV)] --> |Pandas/NumPy| Clean[Processed Data]
-        Clean --> |Feature Engineering| Features[ML Features]
+    subgraph Data_Pipeline
+        Raw[Raw Data CSV] -->|Pandas NumPy| Clean[Processed Data]
+        Clean -->|Feature Engineering| Features[ML Features]
     end
     
-    subgraph Machine Learning
-        Features --> |RF/XGBoost| Forecast[Revenue Forecast Model]
-        Features --> |K-Means| Segments[Customer Clusters]
-        Features --> |Elasticity Algo| Pricing[Pricing Model]
+    subgraph Machine_Learning
+        Features -->|Random Forest XGBoost| Forecast[Revenue Forecast Model]
+        Features -->|K Means| Segments[Customer Clusters]
+        Features -->|Elasticity Algorithm| Pricing[Pricing Model]
     end
     
     subgraph Insights
-        Forecast --> |KPIs| Report
-        Segments --> |Cohorts| Report
-        Pricing --> |Strategy| Report
+        Forecast -->|KPIs| Report[Business Report]
+        Segments -->|Cohorts| Report
+        Pricing -->|Strategy| Report
     end
 ```
 
